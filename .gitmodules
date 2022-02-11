@@ -1,6 +1,3 @@
-[submodule "makeshift-core"]
-	path = makeshift-core
-	url = git@github.com:eitanyaffe/makeshift-core.git
 [submodule "configs/examples"]
 	path = configs/examples
 	url = git@github.com:eitanyaffe/makeshift-example-configs
