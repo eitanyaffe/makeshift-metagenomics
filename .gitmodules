@@ -13,3 +13,6 @@
 [submodule "pipes/metagenomics"]
 	path = pipes/metagenomics
 	url = git@github.com:eitanyaffe/makeshift-metagenomic-pipes.git
+[submodule "makeshift-core"]
+	path = makeshift-core
+	url = https://github.com/eitanyaffe/makeshift-core.git
