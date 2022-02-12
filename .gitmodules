@@ -1,0 +1,3 @@
+[submodule "makeshift-core"]
+	path = makeshift-core
+	url = https://github.com/eitanyaffe/makeshift-core.git
