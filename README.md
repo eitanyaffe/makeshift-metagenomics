@@ -36,8 +36,8 @@ A typical MME run involves applying pipeline steps to a specified user configura
 
 ```
 cd $HOME
-git clone https://github.com/eitanyaffe/makeshift-metagenomics.git
-cd makeshift-metagenomics && make init
+git clone https://github.com/eitanyaffe/makeshift-metagenomics.git makeshift
+cd makeshift && make init
 ```
 
 2) Identify your GCP project name `<your_google_project>` through the GCP console or by calling this command:
