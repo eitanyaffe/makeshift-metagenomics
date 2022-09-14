@@ -22,6 +22,8 @@ A typical MME run involves applying pipeline steps to a specified user configura
 
 ## Prerequisites
 
+Installing and using MME requires a rudimentary control of linux-style terminal and basic bash commands. 
+
 **GNU Make**. GNU Make is installed by default on most modern operating systems. You can run `which make` to verify that GNU Make is installed. If GNU Make is missing follow the installation instructions [here](https://www.gnu.org/software/software.html). 
 
 **Docker**. Install Docker Desktop following the instruction supplied [here](https://docs.docker.com/engine/install/).
