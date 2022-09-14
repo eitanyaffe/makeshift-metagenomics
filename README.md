@@ -109,7 +109,7 @@ make dstat_s
 
 #### Monitoring jobs in GCP
 
-Job labels allow to monitor jobs in real-time in GCP, (see [here](https://cloud.google.com/monitoring/docs/monitoring-overview)). Useful job labels include:
+Job labels allow to monitor jobs in real-time in GCP (see [here](https://cloud.google.com/monitoring/docs/monitoring-overview)). Useful job labels include:
 
 * ms-project-name: An identifier of an entire project `<project_name>`.
 * ms-job-key-1: An identifier of a specific run `<run_key>`.
@@ -133,6 +133,16 @@ If a run has fails on GCP it can be useful to attempt to reproduce the error loc
 
 ```
 make p_all PAR_TYPE=local
+```
+
+To see the value of an MME variable run:
+```
+make p v=<some_variable>
+```
+
+For example, to see the value of the INPUT_BUCKET run:
+```
+make p v=INPUT_BUCKET
 ```
 
 ## Docker image
