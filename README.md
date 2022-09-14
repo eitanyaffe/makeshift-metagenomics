@@ -37,6 +37,7 @@ A typical MME run involves applying pipeline steps to a specified user configura
 ```
 cd $HOME
 git clone https://github.com/eitanyaffe/makeshift-metagenomics.git
+cd makeshift-metagenomics && make init
 ```
 
 2) Identify your GCP project name `<your_google_project>` through the GCP console or by calling this command:
@@ -138,7 +139,7 @@ make p_all PAR_TYPE=local
 
 All external tools are described in a docker image, defined in modules/cloud/gcp/containers/mdocker-metagenomics/Dockerfile.
 
-By default, MME uses the prepared docker image `eitanyaffe/mdocker-metagenomics` on Docker Hub. To work with your own image you need to remove the definition of `GCP_GCR_IMAGE_PATH` in the configuration file and run the following command on your shell from outside the MME:
+By default, MME uses the prepared docker image `eitanyaffe/mdocker-metagenomics` from Docker Hub. To work with your own image you need to remove the definition of `GCP_GCR_IMAGE_PATH` in the configuration file and run the following command on your shell from outside the MME:
 
 ```
 ms_image
