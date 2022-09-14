@@ -140,7 +140,7 @@ To see the value of an MME variable run:
 make p v=<some_variable>
 ```
 
-For example, to see the value of the INPUT_BUCKET run:
+For example, to see the value of INPUT_BUCKET run:
 ```
 make p v=INPUT_BUCKET
 ```
