@@ -2,7 +2,7 @@
 
 The Makeshift Metagenomic Environment (MME) is a command-line environment designed for the rapid development and deployment of data analysis pipelines. 
 
-MME is developed by Eitan Yaffe (eitan.yaffe@gmail.com). It is distributed under the GNU General Public License.
+MME is developed by Eitan Yaffe (eitan.yaffe@gmail.com). It is distributed under the GPL-3.0 license.
 
 Under the hood, MME workflows are implemented in the GNU Make language. MME uses docker to simplify the installation steps and achieve complete reproducibility. Parallelization is supported through the Google Cloud Platform (GCP). Jobs are submitted to GCP through dsub ([https://github.com/DataBiosphere/dsub](https://github.com/DataBiosphere/dsub)).
 
