@@ -67,9 +67,9 @@ export SENDGRID_API_KEY=<your_api_key>
 5) For quick access to the makeshift environment add these aliases to your .zshrc:
 
 ```
-alias ms_image='f() { cd ${MAKESHIFT_ROOT}/pipes/metagenomics/p_assembly && make mdocker mdocker_push; date };f'
-alias ms_pipe='f() { cd ${MAKESHIFT_ROOT}/pipes/metagenomics/p_$1 && make denv ${@:2}; date };f'
-alias ms_pipe_dev='f() { cd ${MAKESHIFT_ROOT}/pipes/dev/p_$1 && make denv ${@:2}; date };f'
+ms_image() { cd ${MAKESHIFT_ROOT}/pipes/metagenomics/p_assembly && make mdocker mdocker_push ${@:2}; }
+ms_pipe() { cd ${MAKESHIFT_ROOT}/pipes/metagenomics/p_$1 && make denv ${@:2}; }
+ms_pipe_dev() { cd ${MAKESHIFT_ROOT}/pipes/dev/p_$1 && make denv ${@:2}; }
 ```
 
 6) Open a new terminal and verify the definitions are in place by running:
