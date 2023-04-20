@@ -2,18 +2,18 @@
 
 The Makeshift Metagenomic Environment (MME) is a command-line environment designed for the rapid development and deployment of data analysis pipelines. 
 
-MME is developed by Eitan Yaffe (eitan.yaffe@gmail.com). It is distributed under the GPL-3.0 license.
-
 MME workflows are implemented in the GNU Make language. MME uses docker to simplify the installation steps and achieve complete reproducibility. Parallelization is supported through the Google Cloud Platform (GCP). Jobs are submitted to GCP through dsub ([https://github.com/DataBiosphere/dsub](https://github.com/DataBiosphere/dsub)).
+
+MME is developed by Eitan Yaffe (eitan.yaffe@gmail.com). It is distributed under the GPL-3.0 license.
 
 **Basic concepts**
 
-* A *step* is one or more bash commands bundled together. For example, predicting genes on contigs using prodigal is a step. 
-* A *module* combines steps into workflows. For example, the genes module handles gene-related topics including gene prediction and annotation.
-* A *pipeline* describes how modules are combined and forms the entry point for users. For example, the assembly pipeline processes raw reads to produce metagenomic assemblies.
-* Users define and customize how their data is processed in *configuration* files. This includes the names of I/O buckets and non-default variable settings. For example, a dataset that encompasses 2 subjects that were sequenced with 5 samples per subject can be described in a single configuration file that points to input files and tables.
+* A *step* is one or more bash commands bundled together. For example, predicting genes using the external tool prodigal is considered a step. 
+* A *module* combines one or more steps. For example, the genes module handles gene-related topics including gene prediction and annotation.
+* A *pipeline* describes how modules are combined and forms the entry point for users. For example, the assembly pipeline processes raw reads to produce metagenomic assemblies, while using multiple modules.
+* Users define and customize how their data is processed in *configuration* files. This includes I/O paths including Google buckets, and can include non-default variable settings.
 
-A typical MME run involves applying pipeline steps to a specified user configuration. MME automatically launches nested jobs on GCP, as defined in the modules.
+An MME run involves executing one or more pipeline steps while using a configuration. MME can run locally or launch nested jobs on the Google cloud.
 
 **List of current MME pipelines**
 

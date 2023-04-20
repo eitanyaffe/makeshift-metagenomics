@@ -29,14 +29,33 @@ Press the 'Enable APIs' button on this page: https://cloud.google.com/life-scien
 
 #### 4. Installing gcloud
 
-Follow instructions on https://cloud.google.com/sdk/docs/install. Follow commands there until the command `gcloud init`.
+Follow instructions on https://cloud.google.com/sdk/docs/install up to and including the command `gcloud init`.
+
 
 #### 5. Configure gcloud to work with docker
 
+Configure docker:
 ```
 gcloud auth configure-docker
 ```
 
+Enable GCR:
+```
+gcloud services enable containerregistry.googleapis.com
+```
+
 #### 6. Install gsutil
 
-gsutil is the most straightforward way to upload your data to GCP buckets. Follow installation instructions on https://cloud.google.com/storage/docs/gsutil.
+gsutil is the most straightforward way to upload your data to GCP buckets. Check if your gcloud installation contains gsutils by running `gcloud components list`. If you see gsutils listed as Installed, you're good. If not, follow installation instructions on https://cloud.google.com/storage/docs/gsutil.
+
+#### 7. Enable Private Google Access
+
+To enable Private Google Access on your VPC Network subnet run the following, while replacing REGION with the region you plan to use for running the machines, as defined in the config file (e.g. us-west1).
+```
+gcloud compute networks subnets update default \
+--region=REGION \
+--enable-private-ip-google-access
+```
+
+For for more information see:
+https://cloud.google.com/vpc/docs/configure-private-google-access#config-pga 

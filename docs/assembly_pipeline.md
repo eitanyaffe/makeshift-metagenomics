@@ -76,6 +76,7 @@ cp ${MAKESHIFT_CONFIG}/examples/pp_test/pp_test_cfg.mk ${MAKESHIFT_CONFIG}/proje
 
 * `PROJECT_NAME`: A string identifier of your project `<project_name>`.
 * `INPUT_BUCKET`: The GCP bucket that contains your input files.
+* `LIBS_INPUT_TABLE`: Path to your library table.
 
 The configuration file is specified using the `c` parameter when openning MME. For example, to use the new configuration file we have created run:
 
