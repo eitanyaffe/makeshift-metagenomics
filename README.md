@@ -151,7 +151,7 @@ make p v=INPUT_BUCKET
 
 All external tools are described in a docker image, defined in modules/cloud/gcp/containers/mdocker-metagenomics/Dockerfile.
 
-By default, MME uses the prepared docker image `eitanyaffe/mdocker-metagenomics` from Docker Hub. To work with your own image you need to remove the definition of `GCP_GCR_IMAGE_PATH` in the configuration file and run the following command on your shell from outside the MME:
+By default, MME uses the prepared docker image `gcr.io/relman-yaffe/mdocker-metagenomics` from Docker Hub. To work with your own image you need to remove the definition of `GCP_GCR_IMAGE_PATH` in the configuration file and run the following command on your shell from outside the MME:
 
 ```
 ms_image
