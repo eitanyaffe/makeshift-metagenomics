@@ -4,7 +4,7 @@ The Makeshift Metagenomic Environment (MME) is a command-line environment design
 
 MME is developed by Eitan Yaffe (eitan.yaffe@gmail.com). It is distributed under the GPL-3.0 license.
 
-Under the hood, MME workflows are implemented in the GNU Make language. MME uses docker to simplify the installation steps and achieve complete reproducibility. Parallelization is supported through the Google Cloud Platform (GCP). Jobs are submitted to GCP through dsub ([https://github.com/DataBiosphere/dsub](https://github.com/DataBiosphere/dsub)).
+MME workflows are implemented in the GNU Make language. MME uses docker to simplify the installation steps and achieve complete reproducibility. Parallelization is supported through the Google Cloud Platform (GCP). Jobs are submitted to GCP through dsub ([https://github.com/DataBiosphere/dsub](https://github.com/DataBiosphere/dsub)).
 
 **Basic concepts**
 
@@ -48,13 +48,13 @@ cd makeshift && make init
 gcloud projects list
 ```
 
-3) You will need to edit your shell initialization script. In MacOS this file is called ~/.zshrc, while in most linux distributions this file is called ~/.bashrc. Here we refer to this file as .zshrc for brevity. Add these lines to .zshrc, while replacing `<your_google_project>` with the GCP project name.
+3) You will need to edit your shell initialization script. In MacOS this file is ~/.zshrc, while in most linux distributions this file is called ~/.bashrc. Here we refer to this file as .zshrc for brevity. Add these lines to .zshrc, while replacing `<your_google_project>` with the GCP project name.
 
 ```
 export MAKESHIFT_ROOT=$HOME/makeshift
 export MAKESHIFT_CONFIG=$HOME/makeshift/configs
+export MAKESHIFT_GCP_KEY=$HOME/keys/makeshift.json
 export GCP_PROJECT_ID=<your_google_project>
-export GCP_KEY=$HOME/keys/makeshift.json
 ```
 
 4) If you wish to set-up email notifications via SendGrid add the following to your .zshrc, replacing `<your_email_address>` with your preferred email address and `<your_api_key>` with the SendGrid API key.
@@ -89,7 +89,7 @@ The demo pipeline serves as a unit test for MME. It launches jobs several small 
 ms_pipe demo c=examples/demo
 ```
 
-This command will start the pipeline environment in a new docker container. If the environment started successfully the bash prompt should start with `[[demo:demo-<your_google_project>]]`. In general, the syntax of the line prompt is `[[<pipeline_name>:<project_name>]]`. 
+This command will start the pipeline environment in a new docker container. If the environment started successfully the bash prompt should start with `[[demo:demo-<your_google_project>]]`. In general, the syntax of the line prompt is `[[<pipeline_name>:<project_name>]]`. The environment opens in the directory of the pipeline and all MME commands will only work from this directory. 
 
 2) **Execute the pipeline.** Run the following command in MME:
 
